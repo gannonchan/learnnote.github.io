@@ -38,6 +38,43 @@
 
 
 
+## VuePress部署之前的准备
+
+- 文档放置在项目的 `docs` 目录中；
+- 使用的是默认的构建输出位置；
+- VuePress 以本地依赖的形式被安装到你的项目中，并且配置了如下的 npm scripts:
+
+```json
+{
+  "scripts": {
+    "docs:build": "vuepress build docs"
+  }
+}
+```
+
+项目下的`package.json` 文件中的完整配置如下：
+
+```json
+{
+  "name": "vuepress",
+  "version": "1.0.0",
+  "description": "学习笔记记录",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "d": "bash deploy.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vuepress": "^0.14.11"
+  }
+}
+```
+
 
 
 ## GitHub上进行站点的搭建
@@ -57,17 +94,102 @@
 
 ### 将GitHub上仓库克隆到本地
 
-选择本地存放Github项目的文件目录， 然后再该目录下使用以下命令行将仓库clone到本地：
+选择本地存放Github项目的文件目录， 然后在该目录下使用以下命令行将仓库clone到本地：
 
 > git clone https://github.com/zhengxiaochuan/learnnote.github.io.git
 
-
-3. 通过 `git checkout -b docs` 切换到 docs 分支，docs 分支存放文档源码，master 分支存放打包好的 HTML 等文件。
+通过 `git checkout -b docs` 切换到 docs 分支，docs 分支存放文档源码，master 分支存放打包好的 HTML 等文件。
 
 > 为什么使用 master 分支存放打包后的文件？
 >  因为在 [name].github.io 项目下没得选，你也可以换个其他仓库，就可以避免这个问题。
 
-4. 写一些文档，做一下简单的配置，先别急着提交到 Github。
+
+
+然后根据VuePress的用法，自行去写一些文档，做一下简单的配置，先别急着提交到 Github。
+
+
+
+### GitHub Pages
+
+1. 在 `docs/.vuepress/config.js` 中设置正确的 `base`。
+
+   如果你打算发布到 `https://.github.io/`，则可以省略这一步，因为 `base` 默认即是 `"/"`。
+
+   如果你打算发布到 `https://.github.io//`（也就是说你的仓库在 `https://github.com//`），则将 `base` 设置为 `"//"`。
+
+2. 在你的项目中，创建一个如下的 `deploy.sh` 文件（请自行判断去掉高亮行的注释）:
+
+```bash
+#!/usr/bin/env sh
+
+# 确保脚本抛出遇到的错误
+set -e
+
+# 生成静态文件
+npm run docs:build
+
+# 进入生成的文件夹
+cd docs/.vuepress/dist
+
+# 如果是发布到自定义域名
+# echo 'www.example.com' > CNAME
+
+git init
+git add -A
+git commit -m 'deploy'
+
+# 如果发布到 https://<USERNAME>.github.io
+# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
+
+# 如果发布到 https://<USERNAME>.github.io/<REPO>
+# git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
+
+cd -
+```
+
+>  提示
+>
+> 你可以在你的持续集成的设置中，设置在每次 push 代码时自动运行上述脚本。
+
+
+
+### GitHub Pages and Travis CI
+
+1. 在 `docs/.vuepress/config.js` 中设置正确的 `base`。
+
+   如果你打算发布到 `https://.github.io/`，则可以省略这一步，因为 `base` 默认即是 `"/"`。
+
+   如果你打算发布到 `https://.github.io//`（也就是说你的仓库在 `https://github.com//`），则将 `base` 设置为 `"//"`。
+
+2. 在项目的根目录创建一个名为 `.travis.yml` 的文件；
+
+3. 在本地执行 `npm install` 并且在提交中包含 `package-lock.json` 因为 `npm ci` 需要它才能正确执行.
+
+4. 使用 GitHub Pages 部署提供程序模板并遵循 [Travis 文档](https://docs.travis-ci.com/user/deployment/pages/)。
+
+```yaml
+language: node_js
+node_js:
+  - lts/*
+install:
+  - npm ci
+script:
+  - npm run docs:build
+deploy:
+  provider: pages
+  skip-cleanup: true
+  local_dir: docs/.vuepress/dist
+  github-token: $GITHUB_TOKEN # a token generated on github allowing travis to push code on you repository
+  keep-history: true
+  on:
+    branch: master
+```
+
+### 
+
+
+
+
 
 
 
@@ -121,7 +243,7 @@ after_success:
 - Note 随意填，填 travis-ci 就行。
 - 除了 delete_repo 权限都打勾就行。
 
-4. 进入 [Travis CI](https://travis-ci.org)，使用 Github 登陆， 进入 [dashboard](https://travis-ci.org/dashboard)，此时应该可以看到你刚创建的项目。
+4. 进入 [Travis CI](https://travis-ci.org)，使用 Github 登录， 进入 [dashboard](https://travis-ci.org/dashboard)，此时应该可以看到你刚创建的项目。
 
 
 
