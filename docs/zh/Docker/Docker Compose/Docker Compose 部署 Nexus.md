@@ -37,7 +37,7 @@ volumes:
 
 > **注意：** 新版本密码在 `cat /var/lib/docker/volumes/nexus_data/_data/admin.password`
 
-![img](..\assets\7d15eefb5020544.png)
+![img](../assets/7d15eefb5020544.png)
 
 ## Maven 仓库介绍
 

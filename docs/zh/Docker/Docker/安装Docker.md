@@ -84,11 +84,11 @@ https://registry.docker-cn.com
 
 以配置阿里云加速器为例，首先 [登录阿里云（没有账号请先注册）](http://qfdmy.com/wp-content/themes/quanbaike/go.php?url=aHR0cHM6Ly9wcm9tb3Rpb24uYWxpeXVuLmNvbS9udG1zL2FjdC9xd2JrLmh0bWw/dXNlckNvZGU9aGdxa3U3YzU=)，搜索 **容器镜像服务**
 
-![img](..\assets\8e2280fbb4c6c26.png)
+![img](../assets/8e2280fbb4c6c26.png)
 
 找到你的专属加速器
 
-![img](..\assets\ee2667294d92be1.png)
+![img](../assets/ee2667294d92be1.png)
 
 通过修改 daemon 配置文件 `/etc/docker/daemon.json` 来使用加速器
 
@@ -176,4 +176,4 @@ docker run --name nginx-container -p 80:80 -d nginx
 
 浏览器输入虚拟机地址即可访问 Nginx
 
-![img](..\assets\1670b1982b988eb.png)
+![img](../assets/1670b1982b988eb.png)

@@ -66,14 +66,17 @@ Spring Boot 项目使用一个全局的配置文件 `application.properties` 或
 
 修改 Tomcat 的端口为 9090，并将默认的访问路径 "/" 修改为 "boot"，可以在 `application.properties` 中添加：
 
-```
-server.port=9090server.context-path=/boot
+```properties
+server.port=9090
+server.context-path=/boot
 ```
 
 或在 application.yml 中添加：
 
-```
-server:  port: 9090  context-path: /boot
+```yaml
+server:
+  port: 9090
+  context-path: /boot
 ```
 
 测试效果：
@@ -102,8 +105,6 @@ logging:  file: ../logs/spring-boot-hello.log  level.org.springframework.web: DE
 
 关闭特定的自动配置使用 `@SpringBootApplication` 注解的 `exclude` 参数即可，这里以关闭数据源的自动配置为例
 
-```
+```java
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 ```
-
-完成

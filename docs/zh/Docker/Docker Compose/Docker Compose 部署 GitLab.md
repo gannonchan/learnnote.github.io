@@ -36,12 +36,12 @@ services:
 
 - 访问地址：[http://ip:8080](http://qfdmy.com/wp-content/themes/quanbaike/go.php?url=aHR0cDovL2lwOjgwODA=)
 
-![img](..\assets\78952f31f90f513.png)
+![img](../assets/78952f31f90f513.png)
 
 - 设置管理员初始密码，这里的密码最好是 **字母 + 数字组合，并且大于等于 8 位**
 - 配置完成后登录，管理员账号是 **root**
 
-![img](..\assets\251781cc957b903.png)
+![img](../assets/251781cc957b903.png)
 
 > **注意：** 如果服务器配置较低，启动运行可能需要较长时间，请耐心等待
 
@@ -49,15 +49,15 @@ services:
 
 第一次使用时可以做一些初始化设置，点击 **管理区域** -> **设置**
 
-![img](..\assets\c63e0370dabdb19.png)
+![img](../assets/c63e0370dabdb19.png)
 
 - 关闭头像功能，由于 Gravatar 头像为网络头像，在网络情况不理想时可能导致访问时卡顿
 
-![img](..\assets\30af40d9b01b1a1.png)
+![img](../assets/30af40d9b01b1a1.png)
 
 - 由于是内部代码托管服务器，可以直接关闭注册功能，由管理员统一创建用户即可
 
-![img](..\assets\8db10129bbcfb65.png)
+![img](../assets/8db10129bbcfb65.png)
 
 ## 账户管理
 
@@ -65,21 +65,21 @@ services:
 
 - 创建账户，点击 **管理区域** -> **新建用户**
 
-![img](..\assets\af0b364f94d5f39.png)
+![img](../assets/af0b364f94d5f39.png)
 
 - 设置账户信息，同时你可以将自己设置为管理员
 
-![img](..\assets\76569aa1df37663.png)
+![img](../assets/76569aa1df37663.png)
 
 - 修改用户密码，由于我们创建时并没有配置邮箱，所以还需要重新编辑用户信息并手动设置密码
 
-![img](..\assets\8916c1e414b4b93.png)
+![img](../assets/8916c1e414b4b93.png)
 
-![img](..\assets\5a01818fe2672e2.png)
+![img](../assets/5a01818fe2672e2.png)
 
 - 退出并使用新账户登录
 
-![img](..\assets\5590805b365ea54.png)
+![img](../assets/5590805b365ea54.png)
 
 > **注意：** 创建完账户，第一次登录时还会提示你修改登录密码
 
@@ -87,19 +87,19 @@ services:
 
 - 点击 **+** 号 -> **新建项目**
 
-![img](..\assets\0cba3c4721d9939.png)
+![img](../assets/0cba3c4721d9939.png)
 
 - 输入项目名称及描述信息，设置可见等级为私有，这样别人就看不见你的项目
 
-![img](..\assets\a54ab5b1aab1f0d.png)
+![img](../assets/a54ab5b1aab1f0d.png)
 
 - 我们选择通过增加一个 README 的方式来初始化项目
 
-![img](..\assets\9752e30ab553c26.png)
+![img](../assets/9752e30ab553c26.png)
 
 - 直接提交修改即可
 
-![img](..\assets\2a7358ce3c1d8ac.png)
+![img](../assets/2a7358ce3c1d8ac.png)
 
 ## 使用 SSH 方式拉取和推送
 
@@ -146,15 +146,15 @@ C:\Program Files\Git\usr\bin>
 
 - 密钥位置在：`C:\Users\你的用户名\.ssh` 目录下，找到 `id_rsa.pub` 并使用编辑器打开，如：
 
-![img](..\assets\7c1bf705b1cdbd5.png)
+![img](../assets/7c1bf705b1cdbd5.png)
 
 - 登录 GitLab，点击“用户头像”-->“设置”-->“SSH 密钥”
 
-![img](..\assets\70ceb16832d9314.png)
+![img](../assets/70ceb16832d9314.png)
 
 - 成功增加密钥后的效果
 
-![img](..\assets\2990bf78f6fb13e.png)
+![img](../assets/2990bf78f6fb13e.png)
 
 ## 使用 TortoiseGit
 
@@ -164,19 +164,19 @@ C:\Program Files\Git\usr\bin>
 - 在文件夹空白处按右键
 - 选择 **Git 克隆...**
 
-![img](..\assets\7f6dc076f32e8fa.png)
+![img](../assets/7f6dc076f32e8fa.png)
 
 - 复制项目地址到 URL
 
-![img](..\assets\2807b1f8671738f.png)
+![img](../assets/2807b1f8671738f.png)
 
 - 如果弹出连接信息请选择是
 
-![img](..\assets\f1af33947230f22.png)
+![img](../assets/f1af33947230f22.png)
 
 - 成功克隆项目到本地
 
-![img](..\assets\6de1febdafa6720.png)
+![img](../assets/6de1febdafa6720.png)
 
 ### 推送项目
 
@@ -215,20 +215,20 @@ temp/
 
 - 右键呼出菜单，选择 **提交 Master...**
 
-![img](..\assets\fd368c2a34ceaf8.png)
+![img](../assets/fd368c2a34ceaf8.png)
 
 - 点击 **全部** 并填入 **日志信息**
 
-![img](..\assets\2f119d987ffbcfc.png)
+![img](../assets/2f119d987ffbcfc.png)
 
 - 点击 **提交并推送**
 
-![img](..\assets\6c527a2b14d7a15.png)
+![img](../assets/6c527a2b14d7a15.png)
 
 - 成功后的效果图
 
-![img](..\assets\c4c8b857c304a86.png)
+![img](../assets/c4c8b857c304a86.png)
 
 ## 查看 GitLab 确认提交成功
 
-![img](..\assets\8f046228b43397a.png)
+![img](../assets/8f046228b43397a.png)

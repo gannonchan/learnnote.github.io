@@ -38,7 +38,7 @@ Harbor 是一个用于存储和分发 Docker 镜像的企业级 Registry 服务�
 
 - **Log Collector：** 为了帮助监控 Harbor 运行，负责收集其他组件的 log，供日后进行分析。
 
-![img](..\assets\3eb420c96b75b44.png)
+![img](../assets/3eb420c96b75b44.png)
 
 ## 工作原理
 
@@ -82,7 +82,7 @@ Harbor 的各个容器会通过以下步骤处理：
 
  
 
-![img](../assets//16daa18883a2fa5e.jpg)
+![img](../assets/16daa18883a2fa5e.jpg)
 
 
 作者：哆啦A梦的猜想链接：https://juejin.im/post/5d9c2f25f265da5bbb1e3de5来源：掘金著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
@@ -249,11 +249,11 @@ For more details, please visit https://github.com/goharbor/harbor .
 
 通过浏览器访问 [http://192.168.141.150](http://qfdmy.com/wp-content/themes/quanbaike/go.php?url=aHR0cDovLzE5Mi4xNjguMTQxLjE1MA==) ，看到登录页面
 
-![img](..\assets\53f967b3135ca78.png)
+![img](../assets/53f967b3135ca78.png)
 
 输入账号 `admin`，密码 `Harbor12345`，登录成功后
 
-![img](..\assets\7de03f6aab763e8.png)
+![img](../assets/7de03f6aab763e8.png)
 
 ## Harbor 启动和停止
 
@@ -337,13 +337,13 @@ Insecure Registries:
 
 我们以推送 Nginx 为例，首先需要在 Harbor 上创建一个 **公开/私有** 的项目
 
-![img](..\assets\d7e5f534e5cbec2.png)
+![img](../assets/d7e5f534e5cbec2.png)
 
-![img](..\assets\2f6da60cb5a1de1.png)
+![img](../assets/2f6da60cb5a1de1.png)
 
 ### 推送镜像
 
-![img](..\assets\84d801ea113d5a4.png)
+![img](../assets/84d801ea113d5a4.png)
 
 ```bash
 # 在项目中标记镜像
@@ -358,9 +358,9 @@ docker push 192.168.141.150/myshop/nginx:latest
 
 ### 查看镜像
 
-![img](..\assets\3bf9aee4227c707.png)
+![img](../assets/3bf9aee4227c707.png)
 
-![img](..\assets\7e33648d6668b4e.png)
+![img](../assets/7e33648d6668b4e.png)
 
 ## Harbor 下载镜像
 

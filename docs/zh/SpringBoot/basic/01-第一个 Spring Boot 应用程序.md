@@ -6,7 +6,7 @@
 
 ### Spring 初始化器
 
-![img](assets/073cc7b8542a62d.png)
+![img](./assets/073cc7b8542a62d.png)
 
 ### 填写项目信息
 
