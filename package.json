@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "vuepress",
   "version": "1.0.0",
   "description": "学习笔记记录",
@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "braces": ">=2.3.1",
     "vuepress": "^0.14.11"
   }
 }
