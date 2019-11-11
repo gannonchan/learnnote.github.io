@@ -260,7 +260,7 @@ after_success:
 
 
 - GH_REF: 项目地址（github.com/[name]/[name].github.io.git）注意去掉 `https://`。
-- GH_TOKEN: tocken 是通过上面第三部拿到的。
+- GH_TOKEN: tocken 是通过上面第三步拿到的。
 - P_BRANCH: 要上传的分支，这里我们要传到 master。
 - U_EMAIL: 你的 Github 邮箱。
 - U_NAME: 你的 Github 用户名。

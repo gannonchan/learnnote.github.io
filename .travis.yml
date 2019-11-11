@@ -1,9 +1,15 @@
-sudo: required
 language: node_js
-node_js: stable
-script: bash ./deploy.sh
-branches:
-  only:
-  - master
-notifications:
-  email: false
+node_js:
+  - lts/*
+install:
+  - npm ci
+script:
+  - npm run docs:build
+deploy:
+  provider: pages
+  skip-cleanup: true
+  local_dir: docs/.vuepress/dist
+  github-token: d329e2021c4d498c12944803dbbb87e25aa3d8a7
+  keep-history: true
+  on:
+    branch: master
