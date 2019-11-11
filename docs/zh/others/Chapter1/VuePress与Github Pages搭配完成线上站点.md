@@ -98,13 +98,6 @@
 
 > git clone https://github.com/zhengxiaochuan/learnnote.github.io.git
 
-通过 `git checkout -b docs` 切换到 docs 分支，docs 分支存放文档源码，master 分支存放打包好的 HTML 等文件。
-
-> 为什么使用 master 分支存放打包后的文件？
->  因为在 [name].github.io 项目下没得选，你也可以换个其他仓库，就可以避免这个问题。
-
-
-
 然后根据VuePress的用法，自行去写一些文档，做一下简单的配置，先别急着提交到 Github。
 
 
@@ -185,7 +178,7 @@ deploy:
     branch: master
 ```
 
-### 
+
 
 
 
