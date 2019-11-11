@@ -23,7 +23,7 @@ git commit -m 'deploy'
 
 
 # 如果发布到 https://<USERNAME>.github.io
-git push -f "https://${GITHUB_TOKEN}@github.com/zhengxiaochuan/learnnote.github.io.git" master:gh-pages
+git push -f "https://d329e2021c4d498c12944803dbbb87e25aa3d8a7@github.com/zhengxiaochuan/learnnote.github.io.git" master:gh-pages
 
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
