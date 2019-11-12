@@ -16,7 +16,7 @@ GitFlow 工作流仍然用中央仓库作为所有开发者的交互中心。和
 
 相对使用仅有的一个 master 分支，GitFlow 工作流使用2个分支来记录项目的历史。master 分支存储了正式发布的历史，而 develop 分支作为功能的集成分支。这样也方便 master 分支上的所有提交分配一个版本号。
 
-![img](..\assets\git-workflow-release-cycle-1historical.png)
+![img](../assets/git-workflow-release-cycle-1historical.png)
 
 剩下要说明的问题围绕着这2个分支的区别展开。
 
@@ -24,13 +24,13 @@ GitFlow 工作流仍然用中央仓库作为所有开发者的交互中心。和
 
 每个新功能位于一个自己的分支，这样可以 push 到中央仓库以备份和协作。但功能分支不是从 master 分支上拉出新分支，而是使用 develop 分支作为父分支。当新功能完成时，合并回 develop 分支。新功能提交应该从不直接与 master 分支交互。
 
-![img](..\assets\git-workflow-release-cycle-2feature.png)
+![img](../assets/git-workflow-release-cycle-2feature.png)
 
 注意，从各种含义和目的上来看，功能分支加上 develop 分支就是功能分支工作流的用法。但 GitFlow 工作流没有在这里止步。
 
 ### 发布分支
 
-![img](..\assets\git-workflow-release-cycle-3release.png)
+![img](../assets/git-workflow-release-cycle-3release.png)
 
 一旦 develop 分支上有了做一次发布（或者说快到了既定的发布日）的足够功能，就从 develop 分支上 fork 一个发布分支。新建的分支用于开始发布循环，所以从这个时间点开始之后新的功能不能再加到这个分支上 —— 这个分支只应该做 Bug 修复、文档生成和其它面向发布任务。一旦对外发布的工作都完成了，发布分支合并到 master 分支并分配一个版本号打好 Tag。另外，这些从新建发布分支以来的做的修改要合并回 develop 分支。
 
@@ -44,7 +44,7 @@ GitFlow 工作流仍然用中央仓库作为所有开发者的交互中心。和
 
 ### 维护分支
 
-![img](..\assets\git-workflow-release-cycle-4maintenance.png)
+![img](../assets/git-workflow-release-cycle-4maintenance.png)
 
 维护分支或说是热修复（hotfix）分支用于生成快速给产品发布版本（production releases）打补丁，这是唯一可以直接从 master 分支 fork 出来的分支。修复完成，修改应该马上合并回 master 分支和 develop 分支（当前的发布分支），master 分支应该用新的版本号打好 Tag。
 
@@ -56,7 +56,7 @@ GitFlow 工作流仍然用中央仓库作为所有开发者的交互中心。和
 
 ### 创建开发分支
 
-![img](..\assets\git-workflow-release-cycle-5createdev.png)
+![img](../assets/git-workflow-release-cycle-5createdev.png)
 
 第一步为 master 分支配套一个 develop 分支。简单来做可以本地创建一个空的 develop 分支，push 到服务器上：
 
@@ -76,7 +76,7 @@ git checkout -b develop origin/develop
 
 ### 小红和小明开始开发新功能
 
-![img](..\assets\git-workflow-release-cycle-6maryjohnbeginnew.png)
+![img](../assets/git-workflow-release-cycle-6maryjohnbeginnew.png)
 
 这个示例中，小红和小明开始各自的功能开发。他们需要为各自的功能创建相应的分支。新分支不是基于 master 分支，而是应该基于 develop 分支：
 
@@ -94,7 +94,7 @@ git commit
 
 ### 小红完成功能开发
 
-![img](..\assets\git-workflow-release-cycle-7maryfinishes.png)
+![img](../assets/git-workflow-release-cycle-7maryfinishes.png)
 
 添加了提交后，小红觉得她的功能 OK 了。如果团队使用 Pull Requests，这时候可以发起一个用于合并到 develop 分支。否则她可以直接合并到她本地的 develop 分支后 push 到中央仓库：
 
@@ -110,7 +110,7 @@ git branch -d some-feature
 
 ### 小红开始准备发布
 
-![img](..\assets\git-workflow-release-cycle-8maryprepsrelease.png)
+![img](../assets/git-workflow-release-cycle-8maryprepsrelease.png)
 
 这个时候小明正在实现他的功能，小红开始准备她的第一个项目正式发布。像功能开发一样，她用一个新的分支来做发布准备。这一步也确定了发布的版本号：
 
@@ -124,7 +124,7 @@ git checkout -b release-0.1 develop
 
 ### 小红完成发布
 
-![img](..\assets\git-workflow-release-cycle-9maryfinishes.png)
+![img](../assets/git-workflow-release-cycle-9maryfinishes.png)
 
 一旦准备好了对外发布，小红合并修改到 master 分支和 develop 分支上，删除发布分支。合并回 develop 分支很重要，因为在发布分支中已经提交的更新需要在后面的新功能中也要是可用的。另外，如果小红的团队要求 Code Review，这是一个发起 Pull Request 的理想时机。
 
@@ -149,7 +149,7 @@ Git 有提供各种勾子（hook），即仓库有事件发生时触发执行的
 
 ### 最终用户发现 Bug
 
-![img](..\assets\git-workflow-gitflow-enduserbug.png)
+![img](../assets/git-workflow-gitflow-enduserbug.png)
 
 对外发布后，小红回去和小明一起做下个发布的新功能开发，直到有最终用户开了一个 Ticket 抱怨当前版本的一个 Bug。为了处理 Bug，小红（或小明）从 master 分支上拉出了一个维护分支，提交修改以解决问题，然后直接合并回 master 分支：
 

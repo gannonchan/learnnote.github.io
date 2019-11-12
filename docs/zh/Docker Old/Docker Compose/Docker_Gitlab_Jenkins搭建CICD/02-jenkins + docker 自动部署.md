@@ -31,7 +31,7 @@
 
 在之前添加的 task 的配置中进行修改，首先修改之前的构建的 shell 脚本
 
-```shell
+```bash
 CONTAINER_NAME="citest"
 GIT_TAG=`git describe --always --tag`
 CONTAINER_FULL_NAME=${CONTAINER_NAME}-${GIT_TAG}
@@ -64,7 +64,7 @@ mkdir -p ./release && rm -f ./release/repository && echo \
 
 然后在构建步骤中再创建一个 **Send files or execute commands over SSH** 类型的步骤，这个步骤就是 ssh 连接其他节点的步骤，添加后在 ssh Server 中选择之前全局配置的节点 ssh 信息 03.png
 
-![img](./assets/16c7fa990c856ab6.webp.jpg)
+![img](../assets/16c7fa990c856ab6.webp.jpg)
 
 
 

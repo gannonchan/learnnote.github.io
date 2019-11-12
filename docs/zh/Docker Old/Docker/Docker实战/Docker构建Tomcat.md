@@ -2,7 +2,7 @@
 
 ## 查找 Docker Hub 上的 Tomcat 镜像
 
-```text
+```
 root@UbuntuBase:/usr/local/docker/tomcat# docker search tomcat
 NAME                           DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
 tomcat                         Apache Tomcat is an open source implementa...   1550                [OK]                
@@ -34,7 +34,7 @@ qminderapp/tomcat7             Tomcat 7                                        0
 
 这里我们拉取官方的镜像
 
-```docker
+```
 docker pull tomcat
 ```
 
@@ -42,7 +42,7 @@ docker pull tomcat
 
 ## 运行容器：
 
-```text
+```
 docker run --name tomcat -p 8080:8080 -v $PWD/test:/usr/local/tomcat/webapps/test -d tomcat
 ```
 
@@ -61,4 +61,4 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 
 通过浏览器访问
 
-![img](../assets/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20171103174843.png)
+![img](../assets/20171103174843.png)

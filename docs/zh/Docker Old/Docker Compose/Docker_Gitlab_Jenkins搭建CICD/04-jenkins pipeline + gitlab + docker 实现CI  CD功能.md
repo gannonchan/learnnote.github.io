@@ -38,7 +38,7 @@ stage('Source') {
 
 点击应用测试效果，构建任务输出
 
-```shell
+```bash
 using credential a4f6f384-4d9c-4dcf-bc1c-c3df536cdbdc
  > git rev-parse --is-inside-work-tree # timeout=10
 Fetching changes from the remote Git repository
@@ -263,7 +263,7 @@ node {
 
 使用一次构建及一次回滚操作，目标主机上查看操作结果
 
-```shell
+```bash
 [root@izuf69bpbvay7p0ozdhq6bz jenkins]# cat mi_test_history
 registry.cn-shanghai.aliyuncs.com/xxx/citest:v1.3.3_manual_37
 [root@izuf69bpbvay7p0ozdhq6bz jenkins]# docker ps

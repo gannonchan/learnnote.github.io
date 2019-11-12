@@ -6,24 +6,24 @@
 
 点击“管理区域”-->“新建用户”
 
-![img](..\assets\Lusifer1511799413.png)
+![img](../assets/Lusifer1511799413.png)
 
 ## 设置账户信息
 
 同时你可以将自己设置为管理员
 
-![img](..\assets\Lusifer1511799508.png)
+![img](../assets/Lusifer1511799508.png)
 
 ## 修改用户密码
 
 由于我们创建时并没有配置邮箱，所以还需要重新编辑用户信息并手动设置密码
 
-![img](..\assets\Lusifer1511799858.png)
+![img](../assets/Lusifer1511799858.png)
 
-![img](..\assets\Lusifer1511799897.png)
+![img](../assets/Lusifer1511799897.png)
 
 ## 退出并使用新账户登录
 
-![img](..\assets\Lusifer1511800022.png)
+![img](../assets/Lusifer1511800022.png)
 
 > 注意：创建完账户，第一次登录时还会提示你修改登录密码

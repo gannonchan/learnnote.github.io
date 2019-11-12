@@ -6,7 +6,7 @@ TortoiseGit, 中文名海龟 Git. 海龟 Git 只支持 Windows 系统, 有一个
 
 下载地址：https://tortoisegit.org/download/
 
-![img](..\assets\Lusifer1511792468.png)
+![img](../assets/Lusifer1511792468.png)
 
 ## 安装
 
@@ -14,46 +14,46 @@ TortoiseGit, 中文名海龟 Git. 海龟 Git 只支持 Windows 系统, 有一个
 
 - 双击安装程序
 
-![img](..\assets\203_tgitWizard.png)
+![img](../assets/203_tgitWizard.png)
 
 - 下一步,进入版权信息界面. 直接点击下一步(Next)即可
 
-![img](..\assets\204_tgit_License.png)
+![img](../assets/204_tgit_License.png)
 
 - 下一步,选择SSH客户端. 可以选择 TortoiseGitPlink(位于TortoiseGit安装目录/bin 下), 也可以选择 Git 默认的SSH客户端,位于 Git安装目录/bin/ssh.exe(如果配置了 Path,那直接是 ssh.exe)
 
-![img](..\assets\204_2_tgit_Network.png)
+![img](../assets/204_2_tgit_Network.png)
 
 - 接着是选择安装目录,可以保持默认,或者安装到开发环境目录下,安装的程序组件保持默认即可
 
-![img](..\assets\205_tgit_dir.png)
+![img](../assets/205_tgit_dir.png)
 
 - 下一步到确认安装界面,点击 Install按钮安装即可,如下图所示
 
-![img](..\assets\206_install_tgit.png)
+![img](../assets/206_install_tgit.png)
 
 - 安装完成,点击 Finish 按钮即可
 
-![img](..\assets\207_tgit_installed.png)
+![img](../assets/207_tgit_installed.png)
 
 ## 安装语言包
 
 双击打开语言包安装程序
 
-![img](..\assets\208_LanguageWizard.png)
+![img](../assets/208_LanguageWizard.png)
 
 点击下一步(Alt+N), 语言包会自动安装完成
 
-![img](..\assets\209_LangPackFinished.png)
+![img](../assets/209_LangPackFinished.png)
 
 ## 配置
 
 在空白处点击鼠标右键, 选择 --> TortoiseGit --> Settings, 然后就可以看到配置界面
 
-![img](..\assets\Lusifer1511793790.png)
+![img](../assets/Lusifer1511793790.png)
 
 选中General,在右边的 Language中选择中文. 不勾选自动升级的复选框,可能还需要指定 Git.exe 文件的路径
 
 再次点击鼠标右键,可以看到弹出菜单中已经变成中文. 原来的 Settings 变成 设置; Clone 变为 克隆
 
-![img](..\assets\Lusifer1511793872.png)
+![img](../assets/Lusifer1511793872.png)

@@ -4,21 +4,21 @@
 
 点击 `+` 号 --> `新建项目`
 
-![img](..\assets\Lusifer1511800438.png)
+![img](../assets/Lusifer1511800438.png)
 
 输入项目名称及描述信息，设置可见等级为私有，这样别人就看不见你的项目
 
-![img](..\assets\Lusifer1511800627.png)
+![img](../assets/Lusifer1511800627.png)
 
 ## 初始化项目
 
 我们选择通过增加一个 README 的方式来初始化项目
 
-![img](..\assets\Lusifer1511800836.png)
+![img](../assets/Lusifer1511800836.png)
 
 直接提交修改即可
 
-![img](..\assets\Lusifer1511800904.png)
+![img](../assets/Lusifer1511800904.png)
 
 ## 使用 SSH 的方式拉取和推送项目
 
@@ -67,15 +67,15 @@ C:\Program Files\Git\usr\bin>
 
 秘钥位置在：`C:\Users\你的用户名\.ssh` 目录下，找到 `id_rsa.pub` 并使用编辑器打开，如：
 
-![img](..\assets\Lusifer1511801618.png)
+![img](../assets/Lusifer1511801618.png)
 
 登录 GitLab，点击“用户头像”-->“设置”-->“SSH 密钥”
 
-![img](..\assets\Lusifer1511801730.png)
+![img](../assets/Lusifer1511801730.png)
 
 成功增加密钥后的效果
 
-![img](..\assets\Lusifer1511801884.png)
+![img](../assets/Lusifer1511801884.png)
 
 ### 使用 TortoiseGit 克隆项目
 
@@ -83,19 +83,19 @@ C:\Program Files\Git\usr\bin>
 - 在文件夹空白处按右键
 - 选择“Git 克隆...”
 
-![img](..\assets\Lusifer1511802101.png)
+![img](../assets/Lusifer1511802101.png)
 
 - 服务项目地址到 URL
 
-![img](..\assets\Lusifer1511802242.png)
+![img](../assets/Lusifer1511802242.png)
 
 - 如果弹出连接信息请选择是
 
-![img](..\assets\Lusifer1511802354.png)
+![img](../assets/Lusifer1511802354.png)
 
 - 成功克隆项目到本地
 
-![img](..\assets\Lusifer1511802402.png)
+![img](../assets/Lusifer1511802402.png)
 
 ### 使用 TortoiseGit 推送项目（提交代码）
 
@@ -103,7 +103,7 @@ C:\Program Files\Git\usr\bin>
 - 我们以创建 `.gitignore` 过滤配置文件为例，该文件的主要作用为过滤不需要上传的文件，比如：IDE 生成的工程文件、编译后的 class 文件等
 - 在工程目录下，新建 `.gitignore` 文件，并填入如下配置：
 
-```text
+```
 .gradle
 *.sw?
 .#*
@@ -148,20 +148,20 @@ transaction-logs
 
 - 右键呼出菜单，选择“提交 Master...”
 
-![img](..\assets\Lusifer1511802947.png)
+![img](../assets/Lusifer1511802947.png)
 
 - 点击“全部”并填入“日志信息”
 
-![img](..\assets\Lusifer1511803046.png)
+![img](../assets/Lusifer1511803046.png)
 
 - 点击“提交并推送”
 
-![img](..\assets\Lusifer1511803174.png)
+![img](../assets/Lusifer1511803174.png)
 
 - 成功后的效果图
 
-![img](..\assets\Lusifer1511803209.png)
+![img](../assets/Lusifer1511803209.png)
 
 ## 查看 GitLab 确认提交成功
 
-![img](..\assets\Lusifer1511803280.png)
+![img](../assets/Lusifer1511803280.png)

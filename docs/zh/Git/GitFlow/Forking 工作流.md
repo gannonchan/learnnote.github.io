@@ -2,7 +2,7 @@
 
 Forking 工作流和前面讨论的几种工作流有根本的不同。这种工作流不是使用单个服务端仓库作为『中央』代码基线，而让各个开发者都有一个服务端仓库。这意味着各个代码贡献者有 2 个 Git 仓库而不是 1 个：一个本地私有的，另一个服务端公开的。
 
-![img](..\assets\git-workflows-forking.png)
+![img](../assets/git-workflows-forking.png)
 
 Forking 工作流的一个主要优势是，贡献的代码可以被集成，而不需要所有人都能 push 代码到仅有的中央仓库中。开发者 push 到自己的服务端仓库，而只有项目维护者才能 push 到正式仓库。这样项目维护者可以接受任何开发者的提交，但无需给他正式代码库的写权限。
 
@@ -30,7 +30,7 @@ Forking 工作流的一个主要优势是，贡献的代码可以被集成，而
 
 ### 项目维护者初始化正式仓库
 
-![img](..\assets\git-workflows-forking-1.png)
+![img](../assets/git-workflows-forking-1.png)
 
 和任何使用 Git 项目一样，第一步是创建在服务器上一个正式仓库，让所有团队成员都可以访问到。通常这个仓库也会作为项目维护者的公开仓库。
 
@@ -45,7 +45,7 @@ Bitbucket 和 Stash 提供了一个方便的 GUI 客户端以完成上面命令�
 
 ### 开发者 fork 正式仓库
 
-![img](..\assets\git-workflows-forking-2.png)
+![img](../assets/git-workflows-forking-2.png)
 
 其它所有的开发需要 fork 正式仓库。可以用 git clone 命令用 SSH 协议连通到服务器，拷贝仓库到服务器另一个位置 —— 是的，fork 操作基本上就只是一个服务端的克隆。Bitbucket 和 Stash 上可以点一下按钮就让开发者完成仓库的 fork 操作。
 
@@ -53,7 +53,7 @@ Bitbucket 和 Stash 提供了一个方便的 GUI 客户端以完成上面命令�
 
 ### 开发者克隆自己 fork 出来的仓库
 
-![img](..\assets\git-workflows-forking-3.png)
+![img](../assets/git-workflows-forking-3.png)
 
 下一步，各个开发者要克隆自己的公开仓库，用熟悉的 git clone 命令。
 
@@ -79,7 +79,7 @@ git remote add upstream https://user@bitbucket.org/maintainer/repo.git
 
 ### 开发者开发自己的功能
 
-![img](..\assets\git-workflows-forking-4.png)
+![img](../assets/git-workflows-forking-4.png)
 
 在刚克隆的本地仓库中，开发者可以像其它工作流一样的编辑代码、提交修改和新建分支：
 
@@ -99,7 +99,7 @@ git pull upstream master
 
 ### 开发者发布自己的功能
 
-![img](..\assets\git-workflows-forking-5.png)
+![img](../assets/git-workflows-forking-5.png)
 
 一旦开发者准备好了分享新功能，需要做二件事。首先，通过push他的贡献代码到自己的公开仓库中，让其它的开发者都可以访问到。他的 origin 远程别名应该已经有了，所以要做的就是：
 
@@ -113,7 +113,7 @@ git push origin feature-branch
 
 ### 项目维护者集成开发者的功能
 
-![img](..\assets\git-workflows-forking-6.png)
+![img](../assets/git-workflows-forking-6.png)
 
 当项目维护者收到 pull request，他要做的是决定是否集成它到正式代码库中。有二种方式来做：
 
@@ -139,7 +139,7 @@ git push origin master
 
 ### 开发者和正式仓库做同步
 
-![img](..\assets\git-workflows-forking-7.png)
+![img](../assets/git-workflows-forking-7.png)
 
 由于正式代码库往前走了，其它的开发需要和正式仓库做同步：
 

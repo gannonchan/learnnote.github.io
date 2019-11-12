@@ -1,6 +1,6 @@
 # docker + gitlab + jenkins 搭建 CI/CD 系统
 
-![img](..\assets\16c21d25be43b3c5.webp)
+![img](../assets/16c21d25be43b3c5.png)
 
 ## 1. 环境
 
@@ -12,8 +12,8 @@ yum默认带有的docker版本比较低，我一般都是会安装更新版本�
 
 #### 如果已经使用yum安装了docker
 
-```shell
-sudo yum remove docker \
+```bash
+sudo yum remove docker /
                 docker-client \
                 docker-client-latest \
                 docker-common \
@@ -27,7 +27,7 @@ sudo yum remove docker \
 
 #### 安装docker依赖库、添加docker官方yum源及安装docker
 
-```shell
+```bash
 sudo yum install -y yum-utils device-mapper-persistent-data lvm2
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 sudo yum install -y docker-ce
@@ -35,7 +35,7 @@ sudo yum install -y docker-ce
 
 #### 配置docker开机自启动并启动docker
 
-```shell
+```bash
 systemctl enable docker
 systemctl daemon-reload
 systemctl start docker
@@ -43,7 +43,7 @@ systemctl start docker
 
 #### 安装完毕可以查询安装的docker版本
 
-```shell
+```bash
 docker --version
 Docker version 18.09.6, build 481bc77156
 ```
@@ -54,7 +54,7 @@ docker-compose是一个python编写的docker编排工具，后面的启动服务
 
 我们部署环境有python3环境，所以直接使用pip3安装docker-compose
 
-```shell
+```bash
 sudo pip3 install docker-compose
 ```
 
@@ -73,7 +73,7 @@ $ sudo chmod +x /usr/local/bin/docker-compose
 
 首先在工作目录下，创建一个docker-compose的脚本，
 
-```shell
+```bash
 # /data/gitlab 是自定义映射gitlab存放配置参数及数据的目录，可以修改成自己需要的目录
 cat > docker-compose.yml << EOF
 version: '2'
@@ -101,7 +101,7 @@ gitlab会监听22端口(ssh连接)，80端口(http)及443端口(https)，我们g
 
 使用vim编辑gitlab的配置文件，gitlab的配置文件默认为 /data/gitlab/cfg/gitlab.rb ，前面的目录就是docker中配置的映射目录
 
-```shell
+```bash
 docker container exec -it gitlab bash
 vim /etc/gitlab/cfg/gitlab.rb
 
@@ -138,7 +138,7 @@ gitlab正常使用可以参考网上其他的资料，主要是用户，组及�
 
 #### 安装jenkins镜像
 
-```shell
+```bash
 # /data/jenkins 是自定义映射jenkins存放数据的目录，可以修改成自己需要的目录，docker的映射是为了让jenkins能使用宿主环境下的docker
 cat > docker-compose.yml << EOF
 version: '2'
@@ -164,21 +164,21 @@ docker-compose up
 
 当 jenkins 正常运行时，启动日志中会有第一次登录需要的管理员密码，如下：
 
-![img](..\assets\16c21b8d271d0f28.webp.jpg)
+![img](../assets/16c21b8d271d0f28.webp.jpg)
 
 
 
 拷贝此密码，然后登录 主机地址:8002 来访问，会进入jenkins初始化页面，输入刚才拷贝的密码，然后进入引导页面，根据引导安装推荐的插件
 
-![img](..\assets\16c21b974dc8e9e1.webp.jpg)
+![img](../assets/16c21b974dc8e9e1.webp.jpg)
 
-![img](..\assets\16c21b9a6d6e8647.webp.jpg)
+![img](../assets/16c21b9a6d6e8647.webp.jpg)
 
 
 
 完成插件之后可以添加一个管理员账号，添加完毕后会进入jenkins的主页
 
-![img](..\assets\16c21bec83016de4.webp.jpg)
+![img](../assets/16c21bec83016de4.webp.jpg)
 
 
 
@@ -186,17 +186,17 @@ docker-compose up
 
 在 系统管理 > 插件管理 > 可选插件中搜索并安装gitlab，docker相关插件
 
-![img](..\assets\16c21c45884d7a3c.webp.jpg)
+![img](../assets/16c21c45884d7a3c.webp.jpg)
 
 
 
-![img](..\assets\16c21c46766b002b.webp.jpg)
+![img](../assets/16c21c46766b002b.webp.jpg)
 
 
 
 
 
-![img](..\assets\16c21c47a6248d54.webp.jpg)
+![img](../assets/16c21c47a6248d54.webp.jpg)
 
 
 
@@ -204,7 +204,7 @@ docker-compose up
 
 需要在gitlab中添加一个测试项目，并且该项目需要有dockerfile脚本，我们测试主要流程是gitlab push tag，然后 jenkins 触发构建开始自动部署，项目部署以docker镜像生成及部署的方式实现
 
-![img](..\assets\16c21c4febc37f95.webp.jpg)
+![img](../assets/16c21c4febc37f95.webp.jpg)
 
 
 
@@ -217,7 +217,7 @@ ssh-keygen -o -t rsa -b 4096 -C "email@example.com"
 
 拷贝 公钥信息，在gitlab > 用户设置 > SSH密钥 > 添加一个SSH密钥
 
-![img](..\assets\16c21c57e7da0415.webp.jpg)
+![img](../assets/16c21c57e7da0415.webp.jpg)
 
 
 
@@ -225,31 +225,31 @@ ssh-keygen -o -t rsa -b 4096 -C "email@example.com"
 
 在jenkins中添加一个任务
 
-![img](..\assets\16c21c5e6628b84f.webp.jpg)
+![img](../assets/16c21c5e6628b84f.webp.jpg)
 
 
 
 任务中需要配置源码信息，这里使用gitlab托管代码，所以需要gitlab仓库的地址，用户需要对仓库具有相应的权限，这里因为还没配置gitlab用户信息，所以提示无法读取仓库源码
 
-![img](..\assets\16c21c6680795c3f.webp.jpg)
+![img](../assets/16c21c6680795c3f.webp.jpg)
 
 
 
 点击 `Credentials` 后面的添加按钮可以添加证书信息，类型选择 `SSH username with private key`，然后添加之前生成密钥的私钥，再点击添加完成录入
 
-![img](..\assets\16c21c6cab32d319.webp.jpg)
+![img](../assets/16c21c6cab32d319.webp.jpg)
 
 然后在在源码管理中选择刚刚添加的认证信息，添加没问题则红色的出错信息将会消失
 
-![img](..\assets\16c21c71db830970.webp.jpg)
+![img](../assets/16c21c71db830970.webp.jpg)
 
 在构建中增加一个构建步骤，即将代码构建 docker 镜像
 
-![img](..\assets\16c21c78041c4a18.webp.jpg)
+![img](../assets/16c21c78041c4a18.webp.jpg)
 
 完成后点击保存完成任务的添加，然后在首页点击构建按钮查看构建效果，第一次会触发docker 下载相应的未下载的镜像，可能会比较慢，之后可以看到任务构建成功，查看控制台输出可以看到构建时shell的输出日志，至此任务的构建已经没有问题，接下去要实现 gitlab push 自动触发构建
 
-![img](..\assets\16c21c7d6e9aae2a.webp.jpg)
+![img](../assets/16c21c7d6e9aae2a.webp.jpg)
 
 
 
@@ -257,15 +257,15 @@ ssh-keygen -o -t rsa -b 4096 -C "email@example.com"
 
 在 jenkins 任务的构建触发器中开启 push event 的触发器，然后在高级中点击生成生成一个回调地址的 Secret token，然后保存
 
-![img](..\assets\16c21c8339a0f341.webp.jpg)
+![img](../assets/16c21c8339a0f341.webp.jpg)
 
 
 
-![img](..\assets\16c21c8475a3eaf7.webp.jpg)
+![img](../assets/16c21c8475a3eaf7.webp.jpg)
 
 在 gitlab 项目 > 设置 > 集成 中将 Jenkins 及 生成的 token配置到gitlab 中，事件选择 tag push
 
-![img](..\assets\16c21c8c9dc2c860.webp.jpg)
+![img](../assets/16c21c8c9dc2c860.webp.jpg)
 
 然后创建一个标签，jenkins 收到回调会自动构建，在首页能查询构建的历史记录
 
@@ -273,7 +273,7 @@ ssh-keygen -o -t rsa -b 4096 -C "email@example.com"
 
 能接受 tag 推送回调之后，需要修改构建的shell脚本
 
-```shell
+```bash
 # 定义变量，CONTAINER_NAME 是项目名称，对应阿里云镜像服务中的仓库名称，GIT_TAG 变量是自动获取本地git版本的tag
 CONTAINER_NAME="citest"
 GIT_TAG=`git describe --always --tag`
@@ -296,7 +296,7 @@ docker rmi -f  `docker images | grep '<none>' | awk '{print $3}'`
 
 修改至这个版本，可以在gitlab中创建一个tag，然后gitlab会回调至jenkins，然后jenkins开始构建并将生成的镜像推送至阿里云registry中并清理现场
 
-![img](..\assets\16c21cb94fd4527d.webp.jpg)
+![img](../assets/16c21cb94fd4527d.webp.jpg)
 
 
 

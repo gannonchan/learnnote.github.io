@@ -16,7 +16,7 @@
 
 修改构建ssh脚本，生成自动部署的脚本中，加入每次自动部署时将上次的image写入本地历史文件中便于版本回退
 
-```shell
+```bash
 CONTAINER_NAME="citest"
 GIT_TAG=`git describe --always --tag`
 CONTAINER_FULL_NAME=${CONTAINER_NAME}-${GIT_TAG}
@@ -61,7 +61,7 @@ mkdir -p ./release && rm -f ./release/repull && echo \
 
 创建构建执行的shell脚本，并支持对构建配置的参数的解析，按参数执行不同的操作
 
-```shell
+```bash
 if [ "$CTRL_BUILD" = "true" ]
 then
 	echo "to build image"

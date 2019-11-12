@@ -2,7 +2,7 @@
 
 ## 查找 Docker Hub 上的 MySQL 镜像
 
-```text
+```
 root@UbuntuBase:/usr/local/docker/mysql# docker search mysql
 NAME                                                   DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
 mysql                                                  MySQL is a widely used, open-source relati...   5177                [OK]                
@@ -34,7 +34,7 @@ jenkler/mysql                                          Docker Mysql package     
 
 这里我们拉取官方的镜像
 
-```text
+```
 docker pull mysql
 ```
 
@@ -42,7 +42,7 @@ docker pull mysql
 
 ## 运行容器：
 
-```text
+```
 docker run -p 3306:3306 --name mysql \
 -v /usr/local/docker/mysql/conf:/etc/mysql \
 -v /usr/local/docker/mysql/logs:/var/log/mysql \
@@ -61,7 +61,7 @@ docker run -p 3306:3306 --name mysql \
 
 查看容器启动情况
 
-```text
+```
 root@UbuntuBase:/usr/local/docker/mysql# docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
 bc49c9de4cdf        mysql:latest        "docker-entrypoint..."   4 minutes ago       Up 4 minutes        0.0.0.0:3306->3306/tcp   mysql
@@ -69,4 +69,4 @@ bc49c9de4cdf        mysql:latest        "docker-entrypoint..."   4 minutes ago  
 
 使用客户端工具连接 MySQL
 
-![img](../assets/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20171103184144.png)
+![img](../assets/20171103184144.png)
