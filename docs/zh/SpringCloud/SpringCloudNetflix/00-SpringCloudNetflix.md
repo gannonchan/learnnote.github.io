@@ -8,7 +8,7 @@
 
 Spring Cloud 为开发人员提供了快速构建分布式系统中一些常见模式的工具（例如配置管理，服务发现，断路器，智能路由，微代理，控制总线）。分布式系统的协调导致了样板模式, 使用 Spring Cloud 开发人员可以快速地支持实现这些模式的服务和应用程序。他们将在任何分布式环境中运行良好，包括开发人员自己的笔记本电脑，裸机数据中心，以及 Cloud Foundry 等托管平台。
 
-**目前业界对 Spring Cloud 使用最广的就是 Spring Cloud Netflix 了。这意味着继续使用它再也没有新功能福利了；后续课程中我会采用 Spring Cloud Alibaba 方案来替代 Spring Cloud Netflix，请大家持续关注我的博客哦！**
+**目前业界对 Spring Cloud 使用最广的就是 Spring Cloud Netflix 了。但由于 Spring Cloud Netflix 项目已进入维护期，这意味着继续使用它再也没有新功能福利了；故我们接下来的项目会采用 Spring Cloud Alibaba方案来替代 Spring Cloud Netflix！**
 
 [**开始学习**](https://funtl.com/zh/spring-cloud-netflix/)
 
@@ -38,6 +38,8 @@ Spring Cloud 为开发人员提供了快速构建分布式系统中一些常见�
 
 将模块置于维护模式，意味着 Spring Cloud 团队将不会再向模块添加新功能。我们将修复 block 级别的 bug 以及安全问题，我们也会考虑并审查社区的小型 pull request。
 
+
+
 ### 替代品
 
 我们建议对这些模块提供的功能进行以下替换
@@ -49,6 +51,8 @@ Spring Cloud 为开发人员提供了快速构建分布式系统中一些常见�
 | Ribbon                      | Spring Cloud Loadbalancer                         |
 | Zuul 1                      | Spring Cloud Gateway                              |
 | Archaius 1                  | Spring Boot external config + Spring Cloud Config |
+
+
 
 ### 其它补充
 
@@ -69,7 +73,7 @@ Spring Cloud 为开发人员提供了快速构建分布式系统中一些常见�
 
 #### Resilience4j
 
-目前还中孵化中，Spring 可能是要抽象一个断路器的统一规范，让不同的断路器（Hystrix、Resilience4j、**Sentinel（阿里开源）**）选择使用
+目前还在孵化中，Spring 可能是要抽象一个断路器的统一规范，让不同的断路器（Hystrix、Resilience4j、**Sentinel（阿里开源）**）选择使用
 
 #### Micrometer
 

@@ -29,6 +29,7 @@ Spring Cloud Alibaba Nacos Config 是 Spring Cloud Config Server 和 Client 的�
 
 ```java
 package com.funtl.spring.cloud.alibaba.consumer.controller;
+
 import com.funtl.spring.cloud.alibaba.consumer.service.EchoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -36,6 +37,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
 @RefreshScope
 @RestController
 public class TestEchoController {
@@ -43,6 +45,7 @@ public class TestEchoController {
     private EchoService echoService;
     @Value("${user.name}")
     private String username;
+    
     @GetMapping(value = "/config")
     public String config() {
         return echoService.echo(username);
@@ -118,6 +121,10 @@ Hello Nacos Provider 灶门祢豆子
 ```
 
 > **提示：** 你可以使用 `spring.cloud.nacos.config.refresh.enabled=false` 来关闭动态刷新
+
+
+
+
 
 ## 附：扩展阅读
 
