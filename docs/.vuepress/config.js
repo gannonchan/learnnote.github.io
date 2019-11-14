@@ -2,7 +2,7 @@ module.exports = {
     // 这是部署到github相关的配置	
     base: '/',
     title: '山河社稷图',
-    description: 'JJane Official Site',
+    description: 'ShanHeSheJiTu',
     // 注入到当前页面的 HTML <head> 中的标签
     head: [
         ['link', { rel: 'icon', href: '/favicon.ico' }],
@@ -29,9 +29,9 @@ module.exports = {
     },       
     themeConfig: {
         // 你的GitHub仓库，请正确填写
-        repo: 'https://www.jjane.cn',
+        repo: 'https://github.com/zhengxiaochuan',
         // 自定义仓库链接文字。
-        repoLabel: '极简官网',
+        repoLabel: '官网',
         //默认主题多语言配置
         locales: {
         	//英文
@@ -86,7 +86,7 @@ module.exports = {
 	              { text: '指南', link: '/zh/guide/' },
 	              { text: '面试收集', link: '/zh/interview/' },
 	              { text: 'SpringBoot', link: '/zh/SpringBoot/' },
-	              { text: '测试', link: '/zh/test/' },
+	              { text: '文章', link: '/zh/article/' },
 	              { text: '关于', link: '/zh/about/' },
 	              { text: 'Changelog', link: '/zh/changelog/' }
 	        	],
@@ -152,6 +152,24 @@ module.exports = {
 				          ]
 				        }
 				    ],
+
+				    // 文章
+				    '/zh/article/': [
+				        {
+				        	title: '技术相关',
+				        	children: [
+				              '/zh/article/可能是国内第一篇全面解读Java现状及趋势的文章',
+				          	]
+				        },
+				        {
+				          title: '其他',
+				          collapsable: true,
+				          children: [
+				            '/zh/article/如何依靠副业赚钱',
+				          ]
+				        }
+				    ],
+
 
 	                // docs文件夹下面的zh/test文件夹 文档中md文件 书写的位置(命名随意)
 				    '/zh/test/': [
