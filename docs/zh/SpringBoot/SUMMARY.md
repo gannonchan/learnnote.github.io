@@ -26,6 +26,11 @@
     * [第09课：WebFlux 集成测试及部署](WebFlux/第09课：WebFlux 集成测试及部署.md)
     * [第10课：WebFlux 实战图书管理系统](WebFlux/第10课：WebFlux 实战图书管理系统.md)
 * Spring Boot 整合
-    * [01-JSR-303实现请求参数校验](Integration/01-JSR-303实现请求参数校验.md)
-    * [02-使用Swagger2构建强大的API文档](Integration/02-使用Swagger2构建强大的API文档.md)
+    * [01-集成Mybatis通用mapper和pagehelper](Integration/01-集成Mybatis通用mapper和pagehelper.md)
+    * [02-全局异常处理](Integration/02-全局异常处理.md)
+    * [03-JSR-303实现请求参数校验](Integration/03-JSR-303实现请求参数校验.md)
+    * [04-整合Swagger2生成API文档](Integration/04-整合Swagger2生成API文档.md)
+    * [05-集成JWT实现token验证](Integration/05-集成JWT实现token验证.md)
+    * [06-集成定时任务](Integration/06-集成定时任务.md)
+    * [07-集成邮件服务](Integration/07-集成邮件服务.md)
 
